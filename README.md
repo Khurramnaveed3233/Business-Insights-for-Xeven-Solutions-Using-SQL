@@ -20,15 +20,16 @@ Improve Monitoring: Implement more effective systems to track projects and maint
 AI Expansion: Develop and expand AI tool offerings to meet growing demand in emerging industries.
 This project demonstrates my ability to solve real business challenges using SQL, providing actionable insights for business growth and operational improvement.
 
-🔗 Check out the full project on my GitHub: https://github.com/Khurramnaveed3233/Data-Analytics-Project-Xeven-Solutions/blob/main/XevenSolutions.sql
-
-
-
-
-
-
-
-
-
-
+🔗 Check out the full project on my GitHub: 
 https://github.com/Khurramnaveed3233/Data-Analytics-Project-Xeven-Solutions/blob/main/XevenSolutions.sql
+
+
+
+
+
+
+
+
+
+
+
