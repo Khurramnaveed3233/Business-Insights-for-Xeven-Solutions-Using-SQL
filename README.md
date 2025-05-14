@@ -11,13 +11,13 @@ The project is organized into four key analytical areas:
 
 1. Client-Focused Insights
    
-  - Identified the client with the highest number of ongoing projects
+    - Identified the client with the highest number of ongoing projects
 
-  - Calculated total revenue from healthcare industry clients
+    - Calculated total revenue from healthcare industry clients
 
-  - Counted active AI clients
+    - Counted active AI clients
 
-  - Calculated average project budgets by industry (e.g., Energy sector)
+    - Calculated average project budgets by industry (e.g., Energy sector)
 
 
 
