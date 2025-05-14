@@ -31,4 +31,26 @@ The project is organized into four key analytical areas:
 
     - Estimated total salary expenditure for employees in healthcare-related projects
 
+3. Project-Focused Insights
 
+   - Listed all paused projects
+
+   - Calculated the overall project completion rate
+
+   - Compared projects completed on time vs those that were overdue
+
+4. AI Tool & Solution Insights
+   
+   - Counted total AI tools deployed
+
+   - Aggregated descriptions to understand impact and application areas
+  
+5. Skills & Tools Used
+
+  - SQL (Joins, Aggregates, CASE, GROUP BY, HAVING, STRING_AGG)
+
+  - Microsoft SQL Server / PostgreSQL (platform independent)
+
+  - Logical reasoning and data storytelling
+
+  - Business analytics mindset
