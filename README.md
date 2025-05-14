@@ -9,6 +9,15 @@ This project showcases a set of structured SQL queries designed to extract busin
 The project is organized into four key analytical areas:
 
 
+1. Client-Focused Insights
+   
+  - Identified the client with the highest number of ongoing projects
+
+  - Calculated total revenue from healthcare industry clients
+
+  - Counted active AI clients
+
+  - Calculated average project budgets by industry (e.g., Energy sector)
 
 
 
