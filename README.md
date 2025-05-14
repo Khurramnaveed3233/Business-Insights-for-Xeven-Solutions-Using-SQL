@@ -55,3 +55,7 @@ The project is organized into four key analytical areas:
 
    - Business analytics mindset
  
+## Author
+
+**Khurram Naveed**  
+khurramnaveed4545@gmail.com
