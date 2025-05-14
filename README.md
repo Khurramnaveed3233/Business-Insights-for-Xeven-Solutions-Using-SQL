@@ -19,6 +19,16 @@ The project is organized into four key analytical areas:
 
     - Calculated average project budgets by industry (e.g., Energy sector)
 
+2. Employee-Focused Insights
+   
+    - Found the employee with the most project assignments
 
+    - Calculated the average salary in the AI Solutions department
+
+    - Identified under-resourced projects (with fewer than 3 employees)
+
+    - Counted total employees in Data Science
+
+    - Estimated total salary expenditure for employees in healthcare-related projects
 
 
