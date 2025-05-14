@@ -47,10 +47,11 @@ The project is organized into four key analytical areas:
   
 5. Skills & Tools Used
 
-  - SQL (Joins, Aggregates, CASE, GROUP BY, HAVING, STRING_AGG)
+   - SQL (Joins, Aggregates, CASE, GROUP BY, HAVING, STRING_AGG)
 
-  - Microsoft SQL Server / PostgreSQL (platform independent)
+   - Microsoft SQL Server / PostgreSQL (platform independent)
 
-  - Logical reasoning and data storytelling
+   - Logical reasoning and data storytelling
 
-  - Business analytics mindset
+   - Business analytics mindset
+ 
