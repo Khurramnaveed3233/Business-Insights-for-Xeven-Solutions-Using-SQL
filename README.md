@@ -119,15 +119,26 @@ This project demonstrates my ability to derive actionable business insights usin
 
 -    Data Modeling: Normalized schema with Clients, Projects, Employees, AI_Tools, and ProjectAssignments tables
 
--    Concepts Used:
+   Concepts Used:
 
   - Aggregations (SUM, AVG, COUNT)
 
   - Joins (INNER JOIN)
 
-Filtering (WHERE, HAVING)
+  - Filtering (WHERE, HAVING)
 
-Grouping and ordering
+  - Grouping and ordering
 
-Subqueries and derived metrics
+  - Subqueries and derived metrics
 
+# 📈 Key Business Insights
+
+Identified top-performing clients and underutilized resources.
+
+Highlighted potential HR gaps in departments like Data Science and AI.
+
+Calculated the completion rate and delay factors of ongoing projects.
+
+Estimated revenue and salary costs segmented by industry and team.
+
+Evaluated the spread and impact of AI tools within the company’s ecosystem.
