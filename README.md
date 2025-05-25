@@ -133,12 +133,12 @@ This project demonstrates my ability to derive actionable business insights usin
 
 # 📈 Key Business Insights
 
-Identified top-performing clients and underutilized resources.
+  - Identified top-performing clients and underutilized resources.
 
-Highlighted potential HR gaps in departments like Data Science and AI.
+  - Highlighted potential HR gaps in departments like Data Science and AI.
 
-Calculated the completion rate and delay factors of ongoing projects.
+  - Calculated the completion rate and delay factors of ongoing projects.
 
-Estimated revenue and salary costs segmented by industry and team.
+  - Estimated revenue and salary costs segmented by industry and team.
 
-Evaluated the spread and impact of AI tools within the company’s ecosystem.
+  - Evaluated the spread and impact of AI tools within the company’s ecosystem.
