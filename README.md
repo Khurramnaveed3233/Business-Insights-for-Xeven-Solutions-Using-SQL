@@ -2,60 +2,18 @@
 
 ![Untitled](https://github.com/user-attachments/assets/dd91da1f-6741-4ec8-990f-db1c33a586ad)
 
-Project Description:
+SQL Portfolio Project: Analyzing Xeven Solutions' Business Operations Using SQL Server
 
-This project showcases a set of structured SQL queries designed to extract business intelligence from a fictional company's operational database — Xeven Solutions. The focus is on generating insights across clients, employees, projects, and AI tools to support strategic decision-making.
+🔍 Overview
+In this project, I performed end-to-end SQL-based analysis for Xeven Solutions, a tech company operating in diverse industries such as healthcare, energy, and artificial intelligence. Using SQL Server, I answered multiple real-world business questions by querying simulated enterprise data involving clients, projects, employees, departments, and AI tools.
 
-The project is organized into four key analytical areas:
+This project demonstrates my ability to derive actionable business insights using structured query language, aggregate functions, joins, and analytical logic, reflecting practical problem-solving for operations, HR, project management, and revenue analysis.
+
+🧠 Business Questions & SQL Solutions
+
+✅ Client-Focused Analysis
+
+1. Which client has the highest number of ongoing projects?
 
 
-1. Client-Focused Insights
-   
-    - Identified the client with the highest number of ongoing projects
 
-    - Calculated total revenue from healthcare industry clients
-
-    - Counted active AI clients
-
-    - Calculated average project budgets by industry (e.g., Energy sector)
-
-2. Employee-Focused Insights
-   
-    - Found the employee with the most project assignments
-
-    - Calculated the average salary in the AI Solutions department
-
-    - Identified under-resourced projects (with fewer than 3 employees)
-
-    - Counted total employees in Data Science
-
-    - Estimated total salary expenditure for employees in healthcare-related projects
-
-3. Project-Focused Insights
-
-   - Listed all paused projects
-
-   - Calculated the overall project completion rate
-
-   - Compared projects completed on time vs those that were overdue
-
-4. AI Tool & Solution Insights
-   
-   - Counted total AI tools deployed
-
-   - Aggregated descriptions to understand impact and application areas
-  
-5. Skills & Tools Used
-
-   - SQL (Joins, Aggregates, CASE, GROUP BY, HAVING, STRING_AGG)
-
-   - Microsoft SQL Server / PostgreSQL (platform independent)
-
-   - Logical reasoning and data storytelling
-
-   - Business analytics mindset
- 
-## Author
-
-**Khurram Naveed**  
-khurramnaveed4545@gmail.com
