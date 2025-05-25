@@ -10,7 +10,7 @@ In this project, I performed end-to-end SQL-based analysis for Xeven Solutions, 
 
 This project demonstrates my ability to derive actionable business insights using structured query language, aggregate functions, joins, and analytical logic, reflecting practical problem-solving for operations, HR, project management, and revenue analysis.
 
-🧠 Business Questions & SQL Solutions
+#  Business Questions & SQL Solutions
 
 ✅ Client-Focused Analysis
 
