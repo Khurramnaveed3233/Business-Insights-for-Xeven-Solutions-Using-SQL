@@ -23,4 +23,27 @@ This project demonstrates my ability to derive actionable business insights usin
        GROUP BY c.ClientName
        ORDER BY OngoingProjectCount DESC;
 
+2. What is the total revenue from clients in the healthcare industry?
 
+       SELECT SUM(p.Budget) AS TotalRevenue
+       FROM Projects p
+       JOIN Clients c ON p.ClientID = c.ClientID
+       WHERE c.Industry = 'Healthcare';
+
+3. How many clients have active AI tools implemented?
+
+       SELECT COUNT(DISTINCT c.ClientID) AS ActiveAIClients
+       FROM AI_Tools at
+       JOIN Clients c ON at.ClientID = c.ClientID
+       WHERE at.ImplementationDate IS NOT NULL;
+
+4. What is the average project budget in the energy sector?
+
+       SELECT AVG(p.Budget) AS AverageProjectBudget
+       FROM Projects p
+       JOIN Clients c ON p.ClientID = c.ClientID
+       WHERE c.Industry = 'Energy';
+
+#  👨‍💼 Employee-Focused Analysis
+
+Which employee has worked on the most projects?
