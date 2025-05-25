@@ -115,15 +115,15 @@ This project demonstrates my ability to derive actionable business insights usin
 
 -    Optimizing vehicle sales strategies
 
-Language: T-SQL (Transact-SQL)
+-    Language: T-SQL (Transact-SQL)
 
-Data Modeling: Normalized schema with Clients, Projects, Employees, AI_Tools, and ProjectAssignments tables
+-    Data Modeling: Normalized schema with Clients, Projects, Employees, AI_Tools, and ProjectAssignments tables
 
-Concepts Used:
+-    Concepts Used:
 
-Aggregations (SUM, AVG, COUNT)
+  - Aggregations (SUM, AVG, COUNT)
 
-Joins (INNER JOIN)
+  - Joins (INNER JOIN)
 
 Filtering (WHERE, HAVING)
 
