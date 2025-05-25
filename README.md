@@ -16,5 +16,11 @@ This project demonstrates my ability to derive actionable business insights usin
 
 1. Which client has the highest number of ongoing projects?
 
+       SELECT TOP 1 c.ClientName, COUNT(p.ProjectID) AS OngoingProjectCount
+       FROM Projects p
+       JOIN Clients c ON p.ClientID = c.ClientID
+       WHERE p.Status = 'Ongoing'
+       GROUP BY c.ClientName
+       ORDER BY OngoingProjectCount DESC;
 
 
