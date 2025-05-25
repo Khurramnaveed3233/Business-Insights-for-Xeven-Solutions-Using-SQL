@@ -46,4 +46,87 @@ This project demonstrates my ability to derive actionable business insights usin
 
 #  👨‍💼 Employee-Focused Analysis
 
-Which employee has worked on the most projects?
+1. Which employee has worked on the most projects?
+
+       SELECT TOP 1 e.FirstName, e.LastName, COUNT(pa.ProjectID) AS ProjectCount
+       FROM Employees e
+       JOIN ProjectAssignments pa ON e.EmployeeID = pa.EmployeeID
+       GROUP BY e.FirstName, e.LastName
+       ORDER BY ProjectCount DESC;
+
+2. Average salary in the AI Solutions department?
+
+       SELECT AVG(e.Salary) AS AverageSalary
+       FROM Employees e
+       WHERE e.Department = 'AI Solutions';
+   
+3. Which projects are under-resourced (fewer than 3 employees)?
+
+       SELECT p.ProjectName, COUNT(pa.EmployeeID) AS EmployeeCount
+       FROM ProjectAssignments pa
+       JOIN Projects p ON pa.ProjectID = p.ProjectID
+       GROUP BY p.ProjectName
+       HAVING COUNT(pa.EmployeeID) < 3;
+   
+4. How many employees are in the Data Science department?
+
+       SELECT COUNT(e.EmployeeID) AS EmployeeCount
+       FROM Employees e
+       WHERE e.Department = 'Data Science';
+   
+5. Total salary expenditure for healthcare-related projects?
+
+       SELECT SUM(e.Salary) AS TotalSalaryExpenditure
+       FROM ProjectAssignments pa
+       JOIN Employees e ON pa.EmployeeID = e.EmployeeID
+       JOIN Projects p ON pa.ProjectID = p.ProjectID
+       JOIN Clients c ON p.ClientID = c.ClientID
+       WHERE c.Industry = 'Healthcare';
+   
+# 📁 Project-Focused Analysis
+
+1. Which projects are currently paused?
+
+       SELECT p.ProjectName
+       FROM Projects p
+       WHERE p.Status = 'Paused';
+   
+2. What is the overall project completion rate?
+
+       SELECT (CAST(COUNT(CASE WHEN p.Status = 'Completed' THEN 1 END) AS FLOAT) / COUNT(p.ProjectID)) * 100 AS CompletionRate
+       FROM Projects p;
+   
+4. Projects completed on time vs. overdue
+
+       SELECT 
+       SUM(CASE WHEN p.EndDate <= p.EndDate THEN 1 ELSE 0 END) AS ProjectsOnTime,
+       SUM(CASE WHEN p.EndDate > EndDate THEN 1 ELSE 0 END) AS ProjectsOverdue
+       FROM Projects p;
+   
+# 🤖 AI Tool & Technology Analysis
+
+1. Total number of AI tools deployed and their impact summaries
+
+       SELECT COUNT(at.ToolID) AS TotalAI_Tools, STRING_AGG(at.Description, ', ') AS ToolImpact
+       FROM AI_Tools at;
+
+# 🛠️ Tools & Technologies
+
+-- Database: SQL Server
+
+Language: T-SQL (Transact-SQL)
+
+Data Modeling: Normalized schema with Clients, Projects, Employees, AI_Tools, and ProjectAssignments tables
+
+Concepts Used:
+
+Aggregations (SUM, AVG, COUNT)
+
+Joins (INNER JOIN)
+
+Filtering (WHERE, HAVING)
+
+Grouping and ordering
+
+Subqueries and derived metrics
+
