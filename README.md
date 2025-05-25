@@ -142,3 +142,16 @@ This project demonstrates my ability to derive actionable business insights usin
   - Estimated revenue and salary costs segmented by industry and team.
 
   - Evaluated the spread and impact of AI tools within the company’s ecosystem.
+
+
+# 📌 How to Use This Project
+
+ - You can clone or fork this repository and:
+
+ - Practice and tweak the SQL queries using your own simulated database.
+
+ - Extend this project by creating views, indexes, and stored procedures.
+
+ - Visualize insights using Power BI or Tableau.
+ 
+
