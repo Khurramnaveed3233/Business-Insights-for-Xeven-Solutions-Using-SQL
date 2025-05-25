@@ -112,7 +112,7 @@ This project demonstrates my ability to derive actionable business insights usin
 
 # 🛠️ Tools & Technologies
 
--- Database: SQL Server
+  -- Database: SQL Server
 
 Language: T-SQL (Transact-SQL)
 
