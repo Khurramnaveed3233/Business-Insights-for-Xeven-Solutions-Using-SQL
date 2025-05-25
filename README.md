@@ -113,7 +113,7 @@ This project demonstrates my ability to derive actionable business insights usin
 # 🛠️ Tools & Technologies
 
 
-- -   Optimizing vehicle sales strategies
+-    Optimizing vehicle sales strategies
 
 Language: T-SQL (Transact-SQL)
 
