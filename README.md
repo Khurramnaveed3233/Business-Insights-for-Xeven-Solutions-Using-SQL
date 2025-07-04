@@ -107,13 +107,16 @@ The project uses five relational tables:
 
 ## 📎 Related Projects
 
-- [Power BI Dashboard: TrendMart Sales Analysis](#)  
+- Power BI Dashboard: TrendMart Sales Analysis
+  
 https://github.com/Khurramnaveed3233/TrendMart-Sales-Analysis-Dashboard-in-PowerBI
 
 - Foodpanda-Pakistan-SQL-Data-Analysis-Project
+  
 https://github.com/Khurramnaveed3233/Foodpanda-Pakistan-SQL-Data-Analysis-Project
 
 - Financial-Sales-Analysis-Report
+  
 https://github.com/Khurramnaveed3233/Financial-Sales-Analysis-Report
 
 ---
