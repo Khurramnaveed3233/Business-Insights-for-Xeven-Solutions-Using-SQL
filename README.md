@@ -2,159 +2,125 @@
 
 ![Untitled](https://github.com/user-attachments/assets/dd91da1f-6741-4ec8-990f-db1c33a586ad)
 
-SQL Portfolio Project: Analyzing Xeven Solutions' Business Operations Using SQL Server
-
-#  Overview
-
-In this project, I performed end-to-end SQL-based analysis for Xeven Solutions, a tech company operating in diverse industries such as healthcare, energy, and artificial intelligence. Using SQL Server, I answered multiple real-world business questions by querying simulated enterprise data involving clients, projects, employees, departments, and AI tools.
-
-This project demonstrates my ability to derive actionable business insights using structured query language, aggregate functions, joins, and analytical logic, reflecting practical problem-solving for operations, HR, project management, and revenue analysis.
-
 ![Capture](https://github.com/user-attachments/assets/faaa909c-50a7-48d7-b1ff-c1b28e2124b9)
 
+# 📊 Analyzing Xeven Solutions' Business Operations Using SQL
 
-#  Business Questions & SQL Solutions
+This project demonstrates how to extract actionable business insights using **pure SQL** from a simulated database of **Xeven Solutions**, a fictional tech company. The analysis focuses on clients, projects, employees, and AI tool implementations to support data-driven decision-making.
 
-✅ Client-Focused Analysis
+---
 
-1. Which client has the highest number of ongoing projects?
+## 🎯 Objective
 
-       SELECT TOP 1 c.ClientName, COUNT(p.ProjectID) AS OngoingProjectCount
-       FROM Projects p
-       JOIN Clients c ON p.ClientID = c.ClientID
-       WHERE p.Status = 'Ongoing'
-       GROUP BY c.ClientName
-       ORDER BY OngoingProjectCount DESC;
+To perform structured SQL analysis across multiple dimensions:
+- Evaluate client contributions and industry trends
+- Analyze employee roles, project distribution, and salaries
+- Measure project performance and resource gaps
+- Assess AI tool deployment across clients
 
-2. What is the total revenue from clients in the healthcare industry?
+---
 
-       SELECT SUM(p.Budget) AS TotalRevenue
-       FROM Projects p
-       JOIN Clients c ON p.ClientID = c.ClientID
-       WHERE c.Industry = 'Healthcare';
+## 🗃️ Database Schema
 
-3. How many clients have active AI tools implemented?
+The project uses five relational tables:
 
-       SELECT COUNT(DISTINCT c.ClientID) AS ActiveAIClients
-       FROM AI_Tools at
-       JOIN Clients c ON at.ClientID = c.ClientID
-       WHERE at.ImplementationDate IS NOT NULL;
+- `Clients` – Client details and industries
+- `Projects` – Project metadata, status, and budgets
+- `Employees` – Staff information including departments and salaries
+- `ProjectAssignments` – Mapping of employees to projects
+- `AI_Tools` – AI tools deployed for clients
 
-4. What is the average project budget in the energy sector?
+---
 
-       SELECT AVG(p.Budget) AS AverageProjectBudget
-       FROM Projects p
-       JOIN Clients c ON p.ClientID = c.ClientID
-       WHERE c.Industry = 'Energy';
+## 🔍 Business Questions & SQL Solutions
 
-#  👨‍💼 Employee-Focused Analysis
+### 🧑‍💼 Client-Focused Insights
 
-1. Which employee has worked on the most projects?
+1. **Which client has the highest number of ongoing projects?**  
+   → Identified the top client to prioritize relationship management.
 
-       SELECT TOP 1 e.FirstName, e.LastName, COUNT(pa.ProjectID) AS ProjectCount
-       FROM Employees e
-       JOIN ProjectAssignments pa ON e.EmployeeID = pa.EmployeeID
-       GROUP BY e.FirstName, e.LastName
-       ORDER BY ProjectCount DESC;
+2. **What is the total revenue from healthcare sector clients?**  
+   → Summed budgets for all healthcare-linked projects to gauge market value.
 
-2. Average salary in the AI Solutions department?
+3. **How many clients have active AI tools implemented?**  
+   → Counted distinct clients with deployed AI tools (`ImplementationDate` not null).
 
-       SELECT AVG(e.Salary) AS AverageSalary
-       FROM Employees e
-       WHERE e.Department = 'AI Solutions';
-   
-3. Which projects are under-resourced (fewer than 3 employees)?
+4. **What’s the average project budget in the energy sector?**  
+   → Used `AVG()` to support sector-based pricing and planning.
 
-       SELECT p.ProjectName, COUNT(pa.EmployeeID) AS EmployeeCount
-       FROM ProjectAssignments pa
-       JOIN Projects p ON pa.ProjectID = p.ProjectID
-       GROUP BY p.ProjectName
-       HAVING COUNT(pa.EmployeeID) < 3;
-   
-4. How many employees are in the Data Science department?
+---
 
-       SELECT COUNT(e.EmployeeID) AS EmployeeCount
-       FROM Employees e
-       WHERE e.Department = 'Data Science';
-   
-5. Total salary expenditure for healthcare-related projects?
+### 👩‍💻 Employee-Focused Insights
 
-       SELECT SUM(e.Salary) AS TotalSalaryExpenditure
-       FROM ProjectAssignments pa
-       JOIN Employees e ON pa.EmployeeID = e.EmployeeID
-       JOIN Projects p ON pa.ProjectID = p.ProjectID
-       JOIN Clients c ON p.ClientID = c.ClientID
-       WHERE c.Industry = 'Healthcare';
-   
-# 📁 Project-Focused Analysis
+1. **Which employee has contributed to the most projects?**  
+   → Ranked employees by total project assignments.
 
-1. Which projects are currently paused?
+2. **What is the average salary in the AI Solutions department?**  
+   → Calculated department-level salary trends using `AVG()`.
 
-       SELECT p.ProjectName
-       FROM Projects p
-       WHERE p.Status = 'Paused';
-   
-2. What is the overall project completion rate?
+3. **Which projects are under-resourced (fewer than 3 employees)?**  
+   → Used `HAVING COUNT() < 3` to flag potential bottlenecks.
 
-       SELECT (CAST(COUNT(CASE WHEN p.Status = 'Completed' THEN 1 END) AS FLOAT) / COUNT(p.ProjectID)) * 100 AS CompletionRate
-       FROM Projects p;
-   
-4. Projects completed on time vs. overdue
+4. **How many employees work in Data Science?**  
+   → Counted based on department filter.
 
-       SELECT 
-       SUM(CASE WHEN p.EndDate <= p.EndDate THEN 1 ELSE 0 END) AS ProjectsOnTime,
-       SUM(CASE WHEN p.EndDate > EndDate THEN 1 ELSE 0 END) AS ProjectsOverdue
-       FROM Projects p;
-   
-# 🤖 AI Tool & Technology Analysis
+5. **What is the total salary expense for Healthcare projects?**  
+   → Joined across 4 tables to compute cumulative salary cost for domain-specific projects.
 
-1. Total number of AI tools deployed and their impact summaries
+---
 
-       SELECT COUNT(at.ToolID) AS TotalAI_Tools, STRING_AGG(at.Description, ', ') AS ToolImpact
-       FROM AI_Tools at;
+### 📁 Project-Focused Insights
 
-# 🛠️ Tools & Technologies
+1. **Which projects are currently paused?**  
+   → Filtered by status to help management prioritize reactivation.
 
+2. **What’s the overall project completion rate?**  
+   → Used conditional aggregation to calculate % completed.
 
--    Optimizing vehicle sales strategies
+3. **How many projects finished on time vs overdue?**  
+   → Compared `EndDate` against actual completion to assess execution quality.
 
--    Language: T-SQL (Transact-SQL)
+---
 
--    Data Modeling: Normalized schema with Clients, Projects, Employees, AI_Tools, and ProjectAssignments tables
+### 🤖 AI Tools Analysis
 
-   Concepts Used:
+1. **How many AI tools are in use, and what is their described impact?**  
+   → Aggregated tool count and concatenated descriptions to report current AI footprint.
 
-  - Aggregations (SUM, AVG, COUNT)
+---
 
-  - Joins (INNER JOIN)
+## 🧰 Tools & Technologies
 
-  - Filtering (WHERE, HAVING)
+- ✅ **SQL Server / PostgreSQL** (compatible)
+- 📁 Structured queries using `JOIN`, `GROUP BY`, `HAVING`, `ORDER BY`, `CASE`, `AVG`, `SUM`, etc.
+- 🧠 Business logic and insight generation from raw data
 
-  - Grouping and ordering
+---
 
-  - Subqueries and derived metrics
+## 📌 Key Learnings
 
-# 📈 Key Business Insights
+- Demonstrated how **SQL alone** can power complex BI insights without dashboards.
+- Showcased **relational thinking**, multi-table joins, and scenario-based queries.
+- Gained deeper understanding of organizational KPIs and how to surface them through clean code.
 
-  - Identified top-performing clients and underutilized resources.
+---
 
-  - Highlighted potential HR gaps in departments like Data Science and AI.
+## 📎 Related Projects
 
-  - Calculated the completion rate and delay factors of ongoing projects.
+- [Power BI Dashboard: TrendMart Sales Analysis](#)  
+- [Excel-Based Sales Tracker](#)  
+- [Customer Segmentation in SQL](#)
 
-  - Estimated revenue and salary costs segmented by industry and team.
+---
 
-  - Evaluated the spread and impact of AI tools within the company’s ecosystem.
+## 📫 Let’s Connect
 
+If you have feedback or would like to collaborate on data projects, feel free to reach out!
 
-# 📌 How to Use This Project
+**Khurram Naveed**  
+📧 khurramnaveed4545@gmail.com  
+🔗 [LinkedIn](#) • [Portfolio](#)
 
- - You can clone or fork this repository and:
+---
 
- - Practice and tweak the SQL queries using your own simulated database.
-
- - Extend this project by creating views, indexes, and stored procedures.
-
- - Visualize insights using Power BI or Tableau.
- 
-
+> 💡 *This project reflects my ability to use SQL to turn raw data into business strategy.*
