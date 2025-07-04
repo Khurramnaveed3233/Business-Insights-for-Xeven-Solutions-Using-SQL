@@ -126,8 +126,15 @@ https://github.com/Khurramnaveed3233/Financial-Sales-Analysis-Report
 If you have feedback or would like to collaborate on data projects, feel free to reach out!
 
 **Khurram Naveed**  
-📧 khurramnaveed4545@gmail.com  
-🔗 [LinkedIn](#) • [Portfolio](#)
+📧 khurramnaveed4545@gmail.com 
+
+LinkedIn : 
+
+https://www.linkedin.com/in/khurram-naveed-0083851aa/
+
+Portfolio
+
+https://github.com/Khurramnaveed3233/Portfolio
 
 ---
 
