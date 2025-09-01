@@ -119,7 +119,7 @@
 
 ##  SQL Cheat-Sheet (for reviewers)
 
--- 1. Top client by ongoing projects
+** 1. Top client by ongoing projects**
 
          SELECT TOP 1 c.ClientName,
          COUNT(p.ProjectID) AS OngoingProjectCount
@@ -129,7 +129,7 @@
          GROUP BY c.ClientName
          ORDER BY OngoingProjectCount DESC;
 
--- 2. AI tool penetration by industry
+**2. AI tool penetration by industry**
 
         SELECT c.Industry,
         COUNT(DISTINCT at.ClientID) * 1.0 / COUNT(DISTINCT c.ClientID) AS Penetration
@@ -137,7 +137,7 @@
         LEFT JOIN AI_Tools at ON c.ClientID = at.ClientID
         GROUP BY c.Industry;
 
--- 3. Salary cost vs budget by industry
+**3. Salary cost vs budget by industry**
  
        SELECT c.Industry,
        SUM(p.Budget)                                   AS Budget,
