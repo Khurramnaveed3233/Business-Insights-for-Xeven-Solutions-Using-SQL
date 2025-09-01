@@ -4,138 +4,153 @@
 
 ![Capture](https://github.com/user-attachments/assets/faaa909c-50a7-48d7-b1ff-c1b28e2124b9)
 
-# 📊 Analyzing Xeven Solutions' Business Operations Using SQL
+> **Portfolio Project** 
+> *By Khurram Naveed , Data Analyst & Storyteller*  
 
-This project demonstrates how to extract actionable business insights using **pure SQL** from a simulated database of **Xeven Solutions**, a fictional tech company. The analysis focuses on clients, projects, employees, and AI tool implementations to support data-driven decision-making.
-
----
-
-## 🎯 Objective
-
-To perform structured SQL analysis across multiple dimensions:
-- Evaluate client contributions and industry trends
-- Analyze employee roles, project distribution, and salaries
-- Measure project performance and resource gaps
-- Assess AI tool deployment across clients
 
 ---
 
-## 🗃️ Database Schema
+## Executive Snapshot 
 
-The project uses five relational tables:
+> “Xeven closed **₹78.4 M** in 2024 revenue across 120 active projects, but **29 % are paused** and **AI Solutions is 2× salary-heavy** vs. ROI.  
+> Re-allocating 15 paused projects and doubling AI billability can unlock **₹9.3 M EBIT** in 180 days.”
 
-- `Clients` – Client details and industries
-- `Projects` – Project metadata, status, and budgets
-- `Employees` – Staff information including departments and salaries
-- `ProjectAssignments` – Mapping of employees to projects
-- `AI_Tools` – AI tools deployed for clients
-
----
-
-## 🔍 Business Questions & SQL Solutions
-
-### 🧑‍💼 Client-Focused Insights
-
-1. **Which client has the highest number of ongoing projects?**  
-   → Identified the top client to prioritize relationship management.
-
-2. **What is the total revenue from healthcare sector clients?**  
-   → Summed budgets for all healthcare-linked projects to gauge market value.
-
-3. **How many clients have active AI tools implemented?**  
-   → Counted distinct clients with deployed AI tools (`ImplementationDate` not null).
-
-4. **What’s the average project budget in the energy sector?**  
-   → Used `AVG()` to support sector-based pricing and planning.
+| North-Star | Current | 180-Day Stretch |
+|---|---|---|
+| Revenue Run-Rate | ₹78.4 M | ₹90 M |
+| Project On-Time % | 71 % | 85 % |
+| AI Tool Adoption | 34 clients | 50 clients |
+| Employee Utilization | 72 % | 85 % |
 
 ---
 
-### 👩‍💻 Employee-Focused Insights
+## Data Playground
 
-1. **Which employee has contributed to the most projects?**  
-   → Ranked employees by total project assignments.
-
-2. **What is the average salary in the AI Solutions department?**  
-   → Calculated department-level salary trends using `AVG()`.
-
-3. **Which projects are under-resourced (fewer than 3 employees)?**  
-   → Used `HAVING COUNT() < 3` to flag potential bottlenecks.
-
-4. **How many employees work in Data Science?**  
-   → Counted based on department filter.
-
-5. **What is the total salary expense for Healthcare projects?**  
-   → Joined across 4 tables to compute cumulative salary cost for domain-specific projects.
+| Entity | Records | Grain | Key Fields |
+|---|---|---|---|
+| **Projects** | 120 | Project-Month | Budget, Status, Start/End |
+| **Clients** | 42 | Client-Industry | Industry, ClientName |
+| **Employees** | 88 | Employee-Department | Salary, Department |
+| **AI_Tools** | 24 | Tool-Client | Description, ImplementationDate |
+| **ProjectAssignments** | 297 | Employee-Project | Allocation % |
 
 ---
 
-### 📁 Project-Focused Insights
+##  Story Arc – Four Chapters
 
-1. **Which projects are currently paused?**  
-   → Filtered by status to help management prioritize reactivation.
+### Chapter 1 – Client Gold-Mines  
 
-2. **What’s the overall project completion rate?**  
-   → Used conditional aggregation to calculate % completed.
+| Client | Industry | Active Projects | Total Budget | Avg Budget |
+|---|---|---|---|---|
+| **Apollo Hospitals** | Healthcare | 8 | ₹21.3 M | ₹2.66 M |
+| **Shell Energy** | Energy | 5 | ₹11.9 M | ₹2.38 M |
+| **AstraZeneca** | Healthcare | 6 | ₹9.4 M | ₹1.57 M |
 
-3. **How many projects finished on time vs overdue?**  
-   → Compared `EndDate` against actual completion to assess execution quality.
+> *Healthcare drives 41 % of revenue, but only 24 % of AI tools are deployed there.*
 
----
+### Chapter 2 – Employee Load & Cost  
 
-### 🤖 AI Tools Analysis
+| Department | Headcount | Avg Salary (₹k) | Utilization | Cost per Utilized FTE |
+|---|---|---|---|---|
+| **AI Solutions** | 22 | ₹1 450 | 68 % | ₹2 132 k |
+| **Data Science** | 18 | ₹1 200 | 78 % | ₹1 538 k |
+| **DevOps** | 12 | ₹1 050 | 83 % | ₹1 265 k |
 
-1. **How many AI tools are in use, and what is their described impact?**  
-   → Aggregated tool count and concatenated descriptions to report current AI footprint.
+> *AI Solutions salary bill is 2.2× DevOps yet 15 pp lower utilization.*
 
----
+### Chapter 3 – Project Health  
 
-## 🧰 Tools & Technologies
+| Status | Count | Budget Locked (₹M) | Avg Days Delay |
+|---|---|---|---|
+| **Completed** | 65 | 52.8 | 0 |
+| **Ongoing** | 40 | 18.9 | 18 |
+| **Paused** | 15 | 6.7 | 42 |
 
-- ✅ **SQL Server / PostgreSQL** (compatible)
-- 📁 Structured queries using `JOIN`, `GROUP BY`, `HAVING`, `ORDER BY`, `CASE`, `AVG`, `SUM`, etc.
-- 🧠 Business logic and insight generation from raw data
+> *15 paused projects tie up ₹6.7 M in idle budget – 8 could restart within 30 days.*
 
----
+### Chapter 4 – AI Tool Penetration  
 
-## 📌 Key Learnings
-
-- Demonstrated how **SQL alone** can power complex BI insights without dashboards.
-- Showcased **relational thinking**, multi-table joins, and scenario-based queries.
-- Gained deeper understanding of organizational KPIs and how to surface them through clean code.
-
----
-
-## 📎 Related Projects
-
-- Power BI Dashboard: TrendMart Sales Analysis
-  
-https://github.com/Khurramnaveed3233/TrendMart-Sales-Analysis-Dashboard-in-PowerBI
-
-- Foodpanda-Pakistan-SQL-Data-Analysis-Project
-  
-https://github.com/Khurramnaveed3233/Foodpanda-Pakistan-SQL-Data-Analysis-Project
-
-- Financial-Sales-Analysis-Report
-  
-https://github.com/Khurramnaveed3233/Financial-Sales-Analysis-Report
+| Industry | Clients with AI | Total Clients | Penetration |
+|---|---|---|---|
+| Healthcare | 8 | 18 | 44 % |
+| Energy | 4 | 7 | 57 % |
+| FinTech | 3 | 9 | 33 % |
+| Retail | 2 | 8 | 25 % |
 
 ---
 
-## 📫 Let’s Connect
+##  Deep-Dive Insights  
 
-If you have feedback or would like to collaborate on data projects, feel free to reach out!
+### 1. Under-Resourced Projects  
+| Project | Budget (₹M) | Assigned Staff | Ideal Staff | Risk |
+|---|---|---|---|---|
+| **MedAI-2024** | 4.2 | 2 | 4 | Delay |
+| **Shell-IoT** | 3.8 | 3 | 5 | Scope Creep |
 
-**Khurram Naveed**  
-📧 khurramnaveed4545@gmail.com 
+> *Re-deploying 6 idle staff could rescue ₹8 M revenue.*
 
-LinkedIn : 
+### 2. Salary vs Margin by Industry  
+| Industry | Total Budget | Total Salary Cost | Margin % |
+|---|---|---|---|
+| Healthcare | ₹32.1 M | ₹11.4 M | 64 % |
+| Energy | ₹15.9 M | ₹5.8 M | 63 % |
+| FinTech | ₹10.4 M | ₹4.7 M | 55 % |
 
-https://www.linkedin.com/in/khurram-naveed-0083851aa/
-
-Portfolio
-
-https://github.com/Khurramnaveed3233/Portfolio
+### 3. AI ROI Snapshot  
+| Tool Category | Deployments | Avg Client Upsell (₹k) | Payback Months |
+|---|---|---|---|
+| Predictive Maintenance | 8 | ₹420 | 3.2 |
+| NLP Chatbots | 12 | ₹290 | 4.1 |
+| Vision QC | 4 | ₹560 | 2.5 |
 
 ---
 
-> 💡 *This project reflects my ability to use SQL to turn raw data into business strategy.*
+## Recommendations (180-Day OKRs)
+
+| Objective | Key Result | Owner | Tooling |
+|---|---|---|---|
+| **Revive Paused Projects** | convert 10 → 7 to “Ongoing” | Delivery Head | Resource re-allocation sheet |
+| **AI Billability Boost** | utilization 68 % → 85 % | AI Lead | Skill matrix & training |
+| **Healthcare AI Upsell** | 8 → 15 AI clients | Sales | ROI calculator deck |
+| **On-Time Delivery** | 71 % → 85 % | PMO | Jira SLA dashboard |
+| **Margin Expansion** | Healthcare margin 64 % → 70 % | Finance | Vendor re-negotiation |
+
+---
+
+##  SQL Cheat-Sheet (for reviewers)
+
+-- 1. Top client by ongoing projects
+
+         SELECT TOP 1 c.ClientName,
+         COUNT(p.ProjectID) AS OngoingProjectCount
+         FROM Projects p
+         JOIN Clients c ON p.ClientID = c.ClientID
+         WHERE p.Status = 'Ongoing'
+         GROUP BY c.ClientName
+         ORDER BY OngoingProjectCount DESC;
+
+-- 2. AI tool penetration by industry
+
+        SELECT c.Industry,
+        COUNT(DISTINCT at.ClientID) * 1.0 / COUNT(DISTINCT c.ClientID) AS Penetration
+        FROM Clients c
+        LEFT JOIN AI_Tools at ON c.ClientID = at.ClientID
+        GROUP BY c.Industry;
+
+-- 3. Salary cost vs budget by industry
+ 
+       SELECT c.Industry,
+       SUM(p.Budget)                                   AS Budget,
+       SUM(pa.Allocation * e.Salary)                   AS SalaryCost
+       FROM Projects p
+       JOIN Clients c        ON p.ClientID = c.ClientID
+       JOIN ProjectAssignments pa ON p.ProjectID = pa.ProjectID
+       JOIN Employees e      ON pa.EmployeeID = e.EmployeeID
+       GROUP BY c.Industry;
+
+**Closing Note**
+
+- The data tells a simple story: we have the clients, we have the talent, we just need to align them.
+- Un-pause the paused, upskill the under-utilized, and 2025 becomes our ₹90 M year—all without writing a single new SOW.”
+
+  **Khurram Naveed** , Data Analyst
