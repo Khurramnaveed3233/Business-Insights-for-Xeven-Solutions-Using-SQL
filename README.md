@@ -4,8 +4,6 @@
 
 ![Capture](https://github.com/user-attachments/assets/faaa909c-50a7-48d7-b1ff-c1b28e2124b9)
 
-#  Xeven Technologies – Business Intelligence & Operations Analytics
-
 > **Role:** Data Analyst | **Tools:** SQL Server · Power BI · DAX | **Domain:** IT Services · Project Management · AI Adoption Analytics
 
 ---
@@ -53,7 +51,7 @@ Xeven had no centralized analytics view to answer critical operational questions
 
 ---
 
-## 🔍 Key Findings
+##  Key Findings
 
 ### Chapter 1 — Client Gold Mines
 
@@ -111,5 +109,122 @@ Xeven had no centralized analytics view to answer critical operational questions
 | MedAI-2024 | 4.2 | 2 | 4 | Delay |
 | Shell-IoT | 3.8 | 3 | 5 | Scope Creep |
 
--
+- **Re-deploying 6 idle staff** from paused projects could rescue **₹8 M in at-risk revenue**
 
+### Salary vs Margin by Industry
+
+| Industry | Total Budget | Salary Cost | Margin % |
+|---|---|---|---|
+| Healthcare | ₹32.1 M | ₹11.4 M | 64% |
+| Energy | ₹15.9 M | ₹5.8 M | 63% |
+| FinTech | ₹10.4 M | ₹4.7 M | 55% |
+
+### AI ROI Snapshot
+
+| Tool Category | Deployments | Avg Client Upsell (₹k) | Payback Months |
+|---|---|---|---|
+| Predictive Maintenance | 8 | ₹420 | 3.2 |
+| NLP Chatbots | 12 | ₹290 | 4.1 |
+| Vision QC | 4 | ₹560 | 2.5 |
+
+- **Vision QC delivers the fastest payback** at 2.5 months — prioritize expansion
+- NLP Chatbots have the most deployments but longest payback — review pricing model
+
+---
+
+## 💡 Recommendations — 180-Day OKRs
+
+| Objective | Key Result | Owner |
+|---|---|---|
+| Revive Paused Projects | Convert 10 paused → 7 ongoing | Delivery Head |
+| AI Billability Boost | Utilization 68% → 85% in AI Solutions | AI Lead |
+| Healthcare AI Upsell | 8 → 15 AI clients in Healthcare | Sales |
+| On-Time Delivery | 71% → 85% project on-time rate | PMO |
+| Margin Expansion | Healthcare margin 64% → 70% | Finance |
+
+**Projected combined impact: ₹9.3 M EBIT within 180 days**
+
+---
+
+## 🛠️ SQL Cheat-Sheet
+
+### 1. Top Client by Ongoing Projects
+```sql
+SELECT TOP 1
+    c.ClientName,
+    COUNT(p.ProjectID) AS OngoingProjectCount
+FROM Projects p
+JOIN Clients c ON p.ClientID = c.ClientID
+WHERE p.Status = 'Ongoing'
+GROUP BY c.ClientName
+ORDER BY OngoingProjectCount DESC;
+```
+
+### 2. AI Tool Penetration by Industry
+```sql
+SELECT
+    c.Industry,
+    COUNT(DISTINCT at.ClientID) * 1.0 / COUNT(DISTINCT c.ClientID) AS Penetration
+FROM Clients c
+LEFT JOIN AI_Tools at ON c.ClientID = at.ClientID
+GROUP BY c.Industry;
+```
+
+### 3. Salary Cost vs Budget by Industry
+```sql
+SELECT
+    c.Industry,
+    SUM(p.Budget)                          AS TotalBudget,
+    SUM(pa.Allocation * e.Salary)          AS TotalSalaryCost,
+    (SUM(p.Budget) - SUM(pa.Allocation * e.Salary))
+        / SUM(p.Budget) * 100              AS MarginPct
+FROM Projects p
+JOIN Clients c             ON p.ClientID    = c.ClientID
+JOIN ProjectAssignments pa ON p.ProjectID   = pa.ProjectID
+JOIN Employees e           ON pa.EmployeeID = e.EmployeeID
+GROUP BY c.Industry;
+```
+
+---
+
+## 🛠️ Technical Approach
+
+### SQL Server
+- **JOINs** across 5 normalized tables — Projects, Clients, Employees, AI Tools, Project Assignments
+- **Aggregations** for budget, salary cost, utilization, and margin by department and industry
+- **Window Functions** for ranking clients by revenue, employees by utilization, and projects by delay
+- **CTEs** for modular multi-step analysis logic
+- **Conditional Logic** (CASE WHEN) for project status classification and risk flagging
+
+### Power BI
+- **Star schema** data model connecting all 5 entity tables
+- **DAX measures** for utilization rate, cost per FTE, margin %, and AI penetration
+- **KPI cards** for all north-star metrics with 180-day targets
+- **Drill-through pages** for client, department, and project-level analysis
+- **Executive summary page** for stakeholder presentation
+
+---
+
+##  Repository Structure
+```
+📂 Xeven-Business-Intelligence-Analytics
+├── 📄 Xeven_Analytics.sql              — Full SQL scripts and queries
+├── 📊 Xeven_Dashboard.pbix             — Interactive Power BI dashboard
+├── 🖼️  Dashboard_Preview.jpg            — Dashboard screenshot
+├── 📄 Insights_Report.pdf              — Executive findings and OKRs
+└── 📄 README.md                        — Project documentation
+```
+
+---
+
+## 👤 About
+
+**Khurram Naveed** — Data Analyst specializing in SQL, Power BI, and business intelligence.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/khurramnaveed3233)
+[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-black?logo=github)](https://github.com/Khurramnaveed3233)
+[![Email](https://img.shields.io/badge/Email-Contact-red?logo=gmail)](mailto:khurramnaveed4545@gmail.com)
+
+---
+
+> 💼 *This project demonstrates how SQL-driven analytics combined with Power BI storytelling can identify ₹9.3 M in hidden EBIT — without new clients, new hires, or new contracts. The data just needs to be asked the right questions.*
