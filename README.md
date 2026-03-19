@@ -4,153 +4,112 @@
 
 ![Capture](https://github.com/user-attachments/assets/faaa909c-50a7-48d7-b1ff-c1b28e2124b9)
 
-> **Portfolio Project** 
-> *By Khurram Naveed , Data Analyst & Storyteller*  
+#  Xeven Technologies – Business Intelligence & Operations Analytics
 
-
----
-
-## Executive Snapshot 
-
-> “Xeven closed **₹78.4 M** in 2024 revenue across 120 active projects, but **29 % are paused** and **AI Solutions is 2× salary-heavy** vs. ROI.  
-> Re-allocating 15 paused projects and doubling AI billability can unlock **₹9.3 M EBIT** in 180 days.”
-
-| North-Star | Current | 180-Day Stretch |
-|---|---|---|
-| Revenue Run-Rate | ₹78.4 M | ₹90 M |
-| Project On-Time % | 71 % | 85 % |
-| AI Tool Adoption | 34 clients | 50 clients |
-| Employee Utilization | 72 % | 85 % |
+> **Role:** Data Analyst | **Tools:** SQL Server · Power BI · DAX | **Domain:** IT Services · Project Management · AI Adoption Analytics
 
 ---
 
-## Data Playground
+##  Project Overview
+
+Delivered an end-to-end **SQL and Power BI analytics engagement** for Xeven Technologies covering **120 projects, 42 clients, 88 employees, and 24 AI tools**. The analysis uncovers operational inefficiencies, salary-to-ROI mismatches, and AI adoption gaps — projecting **₹9.3 M in EBIT uplift within 180 days** through targeted resource reallocation and AI billability improvements.
+
+> *"We have the clients, we have the talent — we just need to align them. Un-pause the paused, upskill the under-utilized, and 2025 becomes our ₹90 M year — all without writing a single new SOW."*
+
+---
+
+##  Business Problem
+
+Xeven had no centralized analytics view to answer critical operational questions:
+
+- Which **clients and industries** generate the highest margin and ROI?
+- Why are **29% of projects paused** and how much budget is locked in idle work?
+- Which **departments are overpaid relative to their utilization**?
+- Where is **AI adoption underperforming** despite available tools?
+- How can resources be **reallocated without new hiring or contracts**?
+
+---
+
+##  Data Playground
 
 | Entity | Records | Grain | Key Fields |
 |---|---|---|---|
-| **Projects** | 120 | Project-Month | Budget, Status, Start/End |
-| **Clients** | 42 | Client-Industry | Industry, ClientName |
-| **Employees** | 88 | Employee-Department | Salary, Department |
-| **AI_Tools** | 24 | Tool-Client | Description, ImplementationDate |
-| **ProjectAssignments** | 297 | Employee-Project | Allocation % |
+| Projects | 120 | Project-Month | Budget, Status, Start/End |
+| Clients | 42 | Client-Industry | Industry, ClientName |
+| Employees | 88 | Employee-Department | Salary, Department |
+| AI Tools | 24 | Tool-Client | Description, ImplementationDate |
+| Project Assignments | 297 | Employee-Project | Allocation % |
 
 ---
 
-##  Story Arc – Four Chapters
+##  North-Star Targets
 
-### Chapter 1 – Client Gold-Mines  
+| Metric | Current | 180-Day Target |
+|---|---|---|
+| Revenue Run-Rate | ₹78.4 M | ₹90 M |
+| Project On-Time % | 71% | 85% |
+| AI Tool Adoption | 34 clients | 50 clients |
+| Employee Utilization | 72% | 85% |
+
+---
+
+## 🔍 Key Findings
+
+### Chapter 1 — Client Gold Mines
 
 | Client | Industry | Active Projects | Total Budget | Avg Budget |
 |---|---|---|---|---|
-| **Apollo Hospitals** | Healthcare | 8 | ₹21.3 M | ₹2.66 M |
-| **Shell Energy** | Energy | 5 | ₹11.9 M | ₹2.38 M |
-| **AstraZeneca** | Healthcare | 6 | ₹9.4 M | ₹1.57 M |
+| Apollo Hospitals | Healthcare | 8 | ₹21.3 M | ₹2.66 M |
+| Shell Energy | Energy | 5 | ₹11.9 M | ₹2.38 M |
+| AstraZeneca | Healthcare | 6 | ₹9.4 M | ₹1.57 M |
 
-> *Healthcare drives 41 % of revenue, but only 24 % of AI tools are deployed there.*
+- **Healthcare drives 41% of total revenue** — yet only 24% of AI tools are deployed there
+- Massive **AI upsell opportunity** in the highest-revenue industry segment
 
-### Chapter 2 – Employee Load & Cost  
+### Chapter 2 — Employee Load and Cost
 
 | Department | Headcount | Avg Salary (₹k) | Utilization | Cost per Utilized FTE |
 |---|---|---|---|---|
-| **AI Solutions** | 22 | ₹1 450 | 68 % | ₹2 132 k |
-| **Data Science** | 18 | ₹1 200 | 78 % | ₹1 538 k |
-| **DevOps** | 12 | ₹1 050 | 83 % | ₹1 265 k |
+| AI Solutions | 22 | ₹1,450 | 68% | ₹2,132k |
+| Data Science | 18 | ₹1,200 | 78% | ₹1,538k |
+| DevOps | 12 | ₹1,050 | 83% | ₹1,265k |
 
-> *AI Solutions salary bill is 2.2× DevOps yet 15 pp lower utilization.*
+- **AI Solutions salary bill is 2.2× DevOps yet 15 percentage points lower in utilization**
+- Immediate opportunity to close the utilization gap and reduce cost per productive FTE
 
-### Chapter 3 – Project Health  
+### Chapter 3 — Project Health
 
 | Status | Count | Budget Locked (₹M) | Avg Days Delay |
 |---|---|---|---|
-| **Completed** | 65 | 52.8 | 0 |
-| **Ongoing** | 40 | 18.9 | 18 |
-| **Paused** | 15 | 6.7 | 42 |
+| Completed | 65 | ₹52.8 M | 0 |
+| Ongoing | 40 | ₹18.9 M | 18 days |
+| Paused | 15 | ₹6.7 M | 42 days |
 
-> *15 paused projects tie up ₹6.7 M in idle budget – 8 could restart within 30 days.*
+- **15 paused projects lock up ₹6.7 M in idle budget**
+- Analysis identifies **8 projects that could restart within 30 days** with minimal reallocation
 
-### Chapter 4 – AI Tool Penetration  
+### Chapter 4 — AI Tool Penetration
 
 | Industry | Clients with AI | Total Clients | Penetration |
 |---|---|---|---|
-| Healthcare | 8 | 18 | 44 % |
-| Energy | 4 | 7 | 57 % |
-| FinTech | 3 | 9 | 33 % |
-| Retail | 2 | 8 | 25 % |
+| Healthcare | 8 | 18 | 44% |
+| Energy | 4 | 7 | 57% |
+| FinTech | 3 | 9 | 33% |
+| Retail | 2 | 8 | 25% |
+
+- **Retail and FinTech are severely under-penetrated** — strong upsell pipeline exists
+- Healthcare at 44% penetration despite being the largest revenue segment — significant expansion room
 
 ---
 
-##  Deep-Dive Insights  
+##  Deep-Dive Insights
 
-### 1. Under-Resourced Projects  
+### Under-Resourced Projects
+
 | Project | Budget (₹M) | Assigned Staff | Ideal Staff | Risk |
 |---|---|---|---|---|
-| **MedAI-2024** | 4.2 | 2 | 4 | Delay |
-| **Shell-IoT** | 3.8 | 3 | 5 | Scope Creep |
+| MedAI-2024 | 4.2 | 2 | 4 | Delay |
+| Shell-IoT | 3.8 | 3 | 5 | Scope Creep |
 
-> *Re-deploying 6 idle staff could rescue ₹8 M revenue.*
+-
 
-### 2. Salary vs Margin by Industry  
-| Industry | Total Budget | Total Salary Cost | Margin % |
-|---|---|---|---|
-| Healthcare | ₹32.1 M | ₹11.4 M | 64 % |
-| Energy | ₹15.9 M | ₹5.8 M | 63 % |
-| FinTech | ₹10.4 M | ₹4.7 M | 55 % |
-
-### 3. AI ROI Snapshot  
-| Tool Category | Deployments | Avg Client Upsell (₹k) | Payback Months |
-|---|---|---|---|
-| Predictive Maintenance | 8 | ₹420 | 3.2 |
-| NLP Chatbots | 12 | ₹290 | 4.1 |
-| Vision QC | 4 | ₹560 | 2.5 |
-
----
-
-## Recommendations (180-Day OKRs)
-
-| Objective | Key Result | Owner | Tooling |
-|---|---|---|---|
-| **Revive Paused Projects** | convert 10 → 7 to “Ongoing” | Delivery Head | Resource re-allocation sheet |
-| **AI Billability Boost** | utilization 68 % → 85 % | AI Lead | Skill matrix & training |
-| **Healthcare AI Upsell** | 8 → 15 AI clients | Sales | ROI calculator deck |
-| **On-Time Delivery** | 71 % → 85 % | PMO | Jira SLA dashboard |
-| **Margin Expansion** | Healthcare margin 64 % → 70 % | Finance | Vendor re-negotiation |
-
----
-
-##  SQL Cheat-Sheet (for reviewers)
-
-** 1. Top client by ongoing projects**
-
-         SELECT TOP 1 c.ClientName,
-         COUNT(p.ProjectID) AS OngoingProjectCount
-         FROM Projects p
-         JOIN Clients c ON p.ClientID = c.ClientID
-         WHERE p.Status = 'Ongoing'
-         GROUP BY c.ClientName
-         ORDER BY OngoingProjectCount DESC;
-
-**2. AI tool penetration by industry**
-
-        SELECT c.Industry,
-        COUNT(DISTINCT at.ClientID) * 1.0 / COUNT(DISTINCT c.ClientID) AS Penetration
-        FROM Clients c
-        LEFT JOIN AI_Tools at ON c.ClientID = at.ClientID
-        GROUP BY c.Industry;
-
-**3. Salary cost vs budget by industry**
- 
-       SELECT c.Industry,
-       SUM(p.Budget)                                   AS Budget,
-       SUM(pa.Allocation * e.Salary)                   AS SalaryCost
-       FROM Projects p
-       JOIN Clients c        ON p.ClientID = c.ClientID
-       JOIN ProjectAssignments pa ON p.ProjectID = pa.ProjectID
-       JOIN Employees e      ON pa.EmployeeID = e.EmployeeID
-       GROUP BY c.Industry;
-
-**Closing Note**
-
-- The data tells a simple story: we have the clients, we have the talent, we just need to align them.
-- Un-pause the paused, upskill the under-utilized, and 2025 becomes our ₹90 M year—all without writing a single new SOW.”
-
-  **Khurram Naveed** , Data Analyst
